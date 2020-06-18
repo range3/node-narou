@@ -1,0 +1,30 @@
+{
+  "name": "@range3/narou",
+  "version": "0.1.0",
+  "description": "Narou lib",
+  "repository": "https://github.com/range3/narou.git",
+  "license": "MIT",
+  "author": "range3 (https://github.com/range3/)",
+  "main": "src/index.mjs",
+  "scripts": {
+    "coverage": "nyc npm run test",
+    "lint": "eslint --ignore-path .gitignore --ext .js,.mjs .",
+    "test": "mocha --recursive --timeout 10000"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "naroujs": "^0.1.2",
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^7.2.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "mocha": "^8.0.1",
+    "nyc": "^15.1.0"
+  }
+}
