@@ -1,9 +1,7 @@
-import chai from 'chai'
-import Narou from '../src/narou.mjs'
-import Novel from '../src/novel.mjs'
-import Episode from '../src/episode.mjs'
-
-const { assert } = chai
+const { assert } = require('chai')
+const Narou = require('../src/narou')
+const Novel = require('../src/novel')
+const Episode = require('../src/episode')
 
 describe('Narou', () => {
   const narou = new Narou()

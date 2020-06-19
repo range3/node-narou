@@ -1,7 +1,7 @@
-import fetch from 'node-fetch'
-import EpisodePage from './episode-page.mjs'
+const fetch = require('node-fetch')
+const EpisodePage = require('./episode-page')
 
-export default class Episode {
+class Episode {
   constructor (ncode, no) {
     this.ncode = ncode
     this.no = no
@@ -20,3 +20,5 @@ export default class Episode {
     this.afterword = episodePage.afterword
   }
 }
+
+module.exports = Episode

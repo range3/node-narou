@@ -1,9 +1,11 @@
-import Novel from './novel.mjs'
+const Novel = require('./novel')
 
-export default class Narou {
+class Narou {
   async novel (ncode) {
     const novel = new Novel(ncode)
     await novel.fetch()
     return novel
   }
 }
+
+module.exports = Narou

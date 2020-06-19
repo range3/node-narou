@@ -1,8 +1,6 @@
-import chai from 'chai'
-import fetch from 'node-fetch'
-import TableOfContents from '../src/table-of-contents.mjs'
-
-const { assert } = chai
+const { assert } = require('chai')
+const fetch = require('node-fetch')
+const TableOfContents = require('../src/table-of-contents')
 
 describe('TableOfContents', () => {
   let tocText

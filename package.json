@@ -1,14 +1,14 @@
 {
   "name": "@range3/narou",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Narou lib",
   "repository": "https://github.com/range3/node-narou.git",
   "license": "MIT",
   "author": "range3 (https://github.com/range3/)",
-  "main": "src/index.mjs",
+  "main": "src/index.js",
   "scripts": {
     "coverage": "nyc npm run test",
-    "lint": "eslint --ignore-path .gitignore --ext .js,.mjs .",
+    "lint": "eslint --ignore-path .gitignore .",
     "test": "mocha --recursive --timeout 10000"
   },
   "dependencies": {

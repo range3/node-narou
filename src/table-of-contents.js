@@ -1,6 +1,6 @@
-import cheerio from 'cheerio'
+const cheerio = require('cheerio')
 
-export default class TableOfContents {
+class TableOfContents {
   static scrape (html) {
     const $ = cheerio.load(html)
     const $novelContents = $('#novel_contents')
@@ -45,3 +45,5 @@ export default class TableOfContents {
     return Array.from(this.arr)
   }
 }
+
+module.exports = TableOfContents

@@ -1,6 +1,6 @@
-import cheerio from 'cheerio'
+const cheerio = require('cheerio')
 
-export default class EpisodePage {
+class EpisodePage {
   static scrape (html) {
     const $ = cheerio.load(html)
     const $novelContents = $('#novel_contents')
@@ -18,3 +18,5 @@ export default class EpisodePage {
     }
   }
 }
+
+module.exports = EpisodePage

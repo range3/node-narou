@@ -1,4 +1,4 @@
-import Narou from '../src/index.mjs'
+const Narou = require('../src/index')
 
 describe('Integration', () => {
   it('test', async () => {

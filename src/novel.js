@@ -1,9 +1,9 @@
-import fetch from 'node-fetch'
-import Episode from './episode.mjs'
-import naroujs from 'naroujs'
-import TableOfContents from './table-of-contents.mjs'
+const fetch = require('node-fetch')
+const naroujs = require('naroujs')
+const Episode = require('./episode')
+const TableOfContents = require('./table-of-contents')
 
-export default class Novel {
+class Novel {
   constructor (ncode) {
     this.ncode = ncode
     this.metadata = null
@@ -28,3 +28,5 @@ export default class Novel {
     return episode
   }
 }
+
+module.exports = Novel
