@@ -9,6 +9,7 @@
   "scripts": {
     "coverage": "nyc npm run test",
     "lint": "eslint --ignore-path .gitignore .",
+    "test:update-mock": "test/mock/download.sh",
     "test": "mocha --recursive --timeout 10000"
   },
   "dependencies": {
