@@ -9,7 +9,7 @@ $ yarn add @range3/narou
 
 ## Usage
 ```js
-import Narou from '@range3/narou'
+const Narou = require('@range3/narou')
 
 const narou = new Narou()
 const novel = await narou.novel('ncode')
