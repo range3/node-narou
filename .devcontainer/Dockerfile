@@ -13,3 +13,4 @@ FROM mcr.microsoft.com/vscode/devcontainers/javascript-node:0-14
 #     && export DEBIAN_FRONTEND=noninteractive \
 #     && apt-get -y install --no-install-recommends <your-package-list-here>
 
+ENV LANG en_US.UTF-8
