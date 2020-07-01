@@ -18,6 +18,7 @@ class Episode {
     this.preface = episodePage.preface
     this.content = episodePage.content
     this.afterword = episodePage.afterword
+    return this
   }
 }
 

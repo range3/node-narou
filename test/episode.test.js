@@ -42,5 +42,9 @@ describe('Episode', () => {
       const lines = episode.content.split('\n')
       assert.strictEqual(lines[0], '　小説家になろうの小説を、ターミナルで閲覧する小説リーダーを作っています。これは、開発テスト用の小説です。')
     })
+
+    it('should return itself', async () => {
+      assert.strictEqual(await episode.fetch(), episode)
+    })
   })
 })
