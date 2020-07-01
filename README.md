@@ -12,7 +12,8 @@ $ yarn add @range3/narou
 const Narou = require('@range3/narou')
 
 const narou = new Narou()
-const novel = await narou.novel('ncode')
+const novel = narou.novel('ncode')
+await novel.fetch()
 
 // 小説メタデータ(なろう小説API出力を参照)
 // https://dev.syosetu.com/man/api/#link6
@@ -43,7 +44,8 @@ const toc = novel.toc.toArray()
 // ]
 
 console.log(novel.episodeLength)
-const episode = await novel.episode(10)
+const episode = novel.episode(10)
+await episode.fetch()
 console.log(episode.subtitle)
 console.log(episode.preface)
 console.log(episode.content)
