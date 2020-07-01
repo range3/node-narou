@@ -1,4 +1,5 @@
 # @range3/narou
+[![npm version](https://badge.fury.io/js/%40range3%2Fnarou.svg)](https://badge.fury.io/js/%40range3%2Fnarou)
 
 > 小説家になろうNode.jsライブラリ
 
