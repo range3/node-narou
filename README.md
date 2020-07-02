@@ -51,6 +51,9 @@ console.log(episode.subtitle)
 console.log(episode.preface)
 console.log(episode.content)
 console.log(episode.afterword)
+
+// Bulk-get
+const novels = await novel.getNovels(['n5519gi', 'nxxxxx'])
 ```
 
 ## TODO

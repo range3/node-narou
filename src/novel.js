@@ -4,9 +4,9 @@ const Episode = require('./episode')
 const TableOfContents = require('./table-of-contents')
 
 class Novel {
-  constructor (ncode) {
+  constructor (ncode, metadata) {
     this.ncode = ncode
-    this.metadata = null
+    this.metadata = metadata || null
   }
 
   async fetch () {
