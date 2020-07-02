@@ -53,7 +53,7 @@ console.log(episode.content)
 console.log(episode.afterword)
 
 // Bulk-get
-const novels = await novel.getNovels(['n5519gi', 'nxxxxx'])
+const novels = await narou.getNovels(['n5519gi', 'nxxxxx'])
 ```
 
 ## TODO
