@@ -10,14 +10,22 @@ class Narou {
     if (!ncodes?.length) {
       return []
     }
-    const res = await naroujs({ ncode: ncodes.join('-') })
 
-    return ncodes.map(ncode => {
-      return new Novel(
-        ncode,
-        res.items?.find(
-          item => item?.ncode.toUpperCase() === ncode.toUpperCase()))
-    })
+    const novels = []
+    for (const slicedNcodes of this.sliceNcodes(ncodes)) {
+      const res = await naroujs({ ncode: slicedNcodes.join('-'), lim: 100 })
+      novels.push(...slicedNcodes.map(ncode => {
+        return new Novel(ncode, res.items?.find(item => item?.ncode.toUpperCase() === ncode.toUpperCase()))
+      }))
+    }
+    return novels
+  }
+
+  sliceNcodes (ncodes) {
+    const maxSize = 100
+    return new Array(Math.ceil(ncodes.length / maxSize))
+      .fill()
+      .map((_, i) => ncodes.slice(i * maxSize, (i + 1) * maxSize))
   }
 }
 
