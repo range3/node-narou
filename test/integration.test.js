@@ -6,7 +6,7 @@ const Narou = require('../src/index')
 
 describe('Integration', () => {
   const baseUrl = 'https://ncode.syosetu.com'
-  const ncode = 'n5519gi'
+  const ncode = 'n4136er'
   before(() => {
     nock(baseUrl).persist()
       .get(`/${ncode}/`)
@@ -15,7 +15,7 @@ describe('Integration', () => {
 
   it('test', async () => {
     const narou = new Narou()
-    const novel = narou.novel('n5519gi')
+    const novel = narou.novel(ncode)
     await novel.fetch()
     assert.isAtLeast(novel.episodeLength, 1)
     const episode = novel.episode(1)

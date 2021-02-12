@@ -6,12 +6,12 @@ const Narou = require('../src/narou')
 
 describe('Episode', () => {
   const baseUrl = 'https://ncode.syosetu.com'
-  const ncode = 'n5519gi'
+  const ncode = 'n4136er'
   let scope
 
   before(() => {
     const mockEpisodePage = fs.readFileSync(
-      path.join(__dirname, './mock/n5519gi.1.html'))
+      path.join(__dirname, `./mock/${ncode}.1.html`))
 
     scope = nock(baseUrl).persist()
     scope
@@ -34,13 +34,14 @@ describe('Episode', () => {
   describe('fetch', () => {
     it('should fetch valid contents', async () => {
       await episode.fetch()
-      assert.propertyVal(episode, 'subtitle', 'サブタイトルテスト')
-      assert.propertyVal(episode, 'preface', 'これは前書きです。')
-      assert.propertyVal(episode, 'afterword', 'これは後書きです。')
+      assert.propertyVal(episode, 'subtitle', 'プロローグ 異質なるもの')
+      assert.propertyVal(episode, 'preface', '初投稿の小説ド素人では御座いますが、何卒暖かい目で読んでください。厳しい批評・暖かい感想を頂ければ幸いです。')
+      assert.propertyVal(episode, 'afterword', 'プロローグだけはホラー風味ですが、以降は明るい感じで行きます！')
       assert.property(episode, 'content')
 
       const lines = episode.content.split('\n')
-      assert.strictEqual(lines[0], '　小説家になろうの小説を、ターミナルで閲覧する小説リーダーを作っています。これは、開発テスト用の小説です。')
+      console.log(require('util').inspect(lines, false, null, true))
+      assert.strictEqual(lines[5], '　白銀のバケツ頭、若きエリート剣士 アルベルトは不服だった。')
     })
 
     it('should return itself', async () => {

@@ -4,13 +4,14 @@ const Novel = require('../src/novel')
 
 describe('Narou', () => {
   let narou
+  const ncode = 'n4136er'
   beforeEach(() => {
     narou = new Narou()
   })
 
   describe('novel', () => {
     it('should return a Novel class', async () => {
-      assert.instanceOf(narou.novel('n5519gi'), Novel)
+      assert.instanceOf(narou.novel(ncode), Novel)
     })
   })
 
@@ -22,12 +23,12 @@ describe('Narou', () => {
     })
 
     it('should return an array of Novels', async () => {
-      const novels = await narou.getNovels(['n5519gi', 'n3930eh'])
+      const novels = await narou.getNovels([ncode, 'n3930eh'])
       assert.isArray(novels)
       assert.lengthOf(novels, 2)
       assert.instanceOf(novels[0], Novel)
       assert.instanceOf(novels[1], Novel)
-      assert.strictEqual(novels[0].metadata.title, 'なろう小説リーダー開発テスト用小説')
+      assert.strictEqual(novels[0].metadata.title, '鎌倉武士は異世界へ  〜武士道とは鬼畜道と見つけたり〜')
     })
   })
 })
