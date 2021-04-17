@@ -4,9 +4,10 @@ const Novel = require('../src/novel')
 
 describe('Narou', () => {
   let narou
-  const ncode = 'n4136er'
+  let ncode
   beforeEach(() => {
     narou = new Narou()
+    ncode = global.narou.ncodes[0]
   })
 
   describe('novel', () => {
@@ -16,19 +17,19 @@ describe('Narou', () => {
   })
 
   describe('getNovels', () => {
-    it('should return a empty Array if ncodes arg is a empty array', async () => {
+    it('should return an empty Array if ncodes arg is an empty array', async () => {
       const novels = await narou.getNovels([])
       assert.isArray(novels)
       assert.isEmpty(novels)
     })
 
     it('should return an array of Novels', async () => {
-      const novels = await narou.getNovels([ncode, 'n3930eh'])
+      const novels = await narou.getNovels(global.narou.ncodes)
       assert.isArray(novels)
-      assert.lengthOf(novels, 2)
+      assert.lengthOf(novels, global.narou.ncodes.length)
       assert.instanceOf(novels[0], Novel)
-      assert.instanceOf(novels[1], Novel)
-      assert.strictEqual(novels[0].metadata.title, '鎌倉武士は異世界へ  〜武士道とは鬼畜道と見つけたり〜')
+      // assert.instanceOf(novels[1], Novel)
+      assert.strictEqual(novels[0].metadata.title, '狼は眠らない')
     })
   })
 })

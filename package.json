@@ -10,23 +10,23 @@
     "coverage": "nyc npm run test",
     "lint": "eslint --ignore-path .gitignore .",
     "pretest": "test/mock/download.sh",
-    "test": "mocha --recursive --timeout 10000"
+    "test": "mocha --require test/hooks.js --recursive --timeout 10000"
   },
   "dependencies": {
-    "cheerio": "^1.0.0-rc.5",
+    "cheerio": "^1.0.0-rc.6",
     "naroujs": "^0.1.2",
     "node-fetch": "^2.6.1"
   },
   "devDependencies": {
-    "chai": "^4.3.0",
-    "eslint": "^7.19.0",
+    "chai": "^4.3.4",
+    "eslint": "^7.24.0",
     "eslint-config-standard": "^16.0.2",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^4.3.1",
+    "eslint-plugin-promise": "^5.1.0",
     "eslint-plugin-standard": "^4.1.0",
-    "mocha": "^8.3.0",
-    "nock": "^13.0.7",
+    "mocha": "^8.3.2",
+    "nock": "^13.0.11",
     "nyc": "^15.1.0"
   }
 }

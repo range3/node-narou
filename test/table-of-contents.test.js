@@ -1,18 +1,14 @@
-const fs = require('fs')
-const path = require('path')
 const { assert } = require('chai')
-const nock = require('nock')
 const fetch = require('node-fetch')
 const TableOfContents = require('../src/table-of-contents')
 
 describe('TableOfContents', () => {
-  const baseUrl = 'https://ncode.syosetu.com'
-  const ncode = 'n5519gi'
+  let baseUrl
+  let ncode
   let tocText
   before(async () => {
-    nock(baseUrl).persist()
-      .get(new RegExp(`/${ncode}/?`))
-      .reply(200, fs.readFileSync(path.join(__dirname, './mock/toc.html')))
+    baseUrl = global.narou.baseUrl
+    ncode = global.narou.ncodes[0]
     const res = await fetch(`${baseUrl}/${ncode}`)
     tocText = await res.text()
   })
@@ -21,7 +17,6 @@ describe('TableOfContents', () => {
     it('should return an instance of TableOfContents', () => {
       const toc = TableOfContents.scrape(tocText)
       assert.instanceOf(toc, TableOfContents)
-      console.log(toc)
     })
   })
 })

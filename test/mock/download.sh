@@ -2,7 +2,7 @@
 
 SCRIPT_DIR=$(cd $(dirname $0) && pwd)
 
-NCODE=n4136er
+NCODE=n3930eh
 
 if [ ! -f ${SCRIPT_DIR}/toc.html ]; then
   curl -o ${SCRIPT_DIR}/toc.html https://ncode.syosetu.com/${NCODE}/
